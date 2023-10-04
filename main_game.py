@@ -28,6 +28,7 @@ def main_game(co2_budget, location):
             destination = input("Next destination: ")
 
     print(f"Game over, your final score is {flight_count}. Current location: {location}")
+    return flight_count
 
 
 
