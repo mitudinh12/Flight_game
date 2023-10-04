@@ -5,12 +5,12 @@ user_example = ('Tu', 10000, 'Finland', 0)
 
 def getContinent(country):
     sql = f"SELECT continent FROM country WHERE name = '{country}';"
-    print(sql)
     cursor = connection.cursor()
     cursor.execute(sql)
     result = cursor.fetchall()
     print(result)
-    return result
+    return result #return a list of a tuple
+
 
 connection = mysql.connector.connect(
          host='127.0.0.1',
@@ -20,10 +20,13 @@ connection = mysql.connector.connect(
          password='pass_word',
          autocommit=True
          )
-country_search = getContinent(user_example[2])
-transform1 = country_search[0]
-transform2 = transform1[0]
-print(type(transform2))
+continent_result = getContinent(user_example[2])
+location = continent_result[0][0]
+print(location)
+
+
+
+
 
 
 
