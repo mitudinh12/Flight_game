@@ -1,15 +1,8 @@
 
-def createPlayer():
+
+def main_game():
     name = input("Enter your name: ")
     location = input("Which country are you in right now?: ")
-    player = {
-        "name": name,
-        "current_location": location
-    }
-    return player
-
-
-def main_game(location):
     flight_count = 0
     co2_budget = 10000
     print(f"Your current co2 budget: {co2_budget}")
@@ -39,27 +32,12 @@ def main_game(location):
             destination = input("Next destination: ")
 
     print(f"Game over, your final score is {flight_count}. Current location: {location}")
-    result = co2_budget, location, flight_count
+    result = name, co2_budget, location, flight_count
     print(result)
     return result
 
-def updatePlayer(name, co2_remaining, updated_location, score):
-    player_name = name
-    player_co2 = co2_remaining
-    player_location = updated_location
-    player_score = score
-    player_data = player_name, player_co2, player_location, player_score
-    return player_data
 
-def playGame():
-    player = createPlayer()
-    print(player)
-    game_start = main_game(player['current_location'])
-    update_player = updatePlayer(player['name'], game_start[0],game_start[1], game_start[2])
-    print(update_player)
-    return update_player
-
-playGame()
+main_game()
 
 
 
