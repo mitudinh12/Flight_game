@@ -53,18 +53,17 @@ def check_country_existence(country):
 def get_destination():
     next_location = input("Next destination: ")
     while check_country_existence(next_location) is False:
-        next_location = input("Type again your destination: ")
+        next_location = input("Country not found!!! Type again your destination: ")
     next_continent = get_continent(next_location)
     destination = dict(country=next_location, continent=next_continent)
     print(destination)
     return destination
 
-def main_game():
+
+def play_game():
     name = input("Enter your name: ")
-
-    location = input("Which country are you in right now?: ")
+    location = input("Which country are you in right now?: ") #country name must be correct, for now
     current_continent = get_continent(location)
-
     flight_count = 0
     co2_budget = 10000
     print(f"Your current co2 budget: {co2_budget}, continent: {current_continent}")
@@ -107,8 +106,10 @@ def main_game():
 
     print(f"Game over, your final score is {flight_count}. Current location: {location}")
     result = name, co2_budget, location, flight_count
-    print(result)
-    return result
+    add_result_database(result)
+
+
+
 
 
 
