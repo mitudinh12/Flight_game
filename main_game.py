@@ -61,10 +61,8 @@ def get_destination(current_location):
         while check_country_existence(next_location) is False:
             next_location = input("Country not found!!! Type again your destination: ")
 
-    print("Flying to the next destination....")
     next_continent = get_continent(next_location)
     destination = dict(country=next_location, continent=next_continent)
-    print(destination)
     return destination
 
 
@@ -93,7 +91,7 @@ def play_game():
             flight_count +=1
             current_continent = next_continent
             location = next_country
-            print(f"Current budget: {co2_budget}, continent: {current_continent}")
+            print(f"\nFLIGHT SUCCESS! Current budget: {co2_budget}, continent: {current_continent}")
 
             next_location = get_destination(location)
             next_country = next_location["country"]
@@ -110,7 +108,7 @@ def play_game():
                 location = next_country
                 if co2_budget == 0:
                     break
-            print(f"Current budget: {co2_budget}, continent: {current_continent}")
+            print(f"\nFLIGHT SUCCESS! Current budget: {co2_budget}, continent: {current_continent}")
 
             next_location = get_destination(location)
             next_country = next_location["country"]
@@ -118,7 +116,7 @@ def play_game():
 
     print(f"Game over, your final score is {flight_count}. Current location: {location}")
     result = name, co2_budget, location, flight_count
-    #add_result_database(result)
+    add_result_database(result)
 
 
 
