@@ -62,7 +62,10 @@ def get_destination():
 
 def play_game():
     name = input("Enter your name: ")
-    location = input("Which country are you in right now?: ") #country name must be correct, for now
+    location = input("Which country are you in right now?: ")
+    while check_country_existence(location) is False:
+        location = input("Country not found. Where are you at again?: ")
+
     current_continent = get_continent(location)
     flight_count = 0
     co2_budget = 10000
@@ -110,7 +113,7 @@ def play_game():
 
 
 
-
+play_game()
 
 
 
