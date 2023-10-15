@@ -1,0 +1,13 @@
+
+Your initial co2 budget is 10 000 units. Every flight will consume your co2 budget
+
+If you travel to a country in the same continent, you will use 1000 units from your co2 budget
+
+If you travel to a country in a different continent, you will use 3000 units from your co2 budget
+
+You cannot flight to the same country twice.
+
+You get 1 point for every successful trip. The game ends when you use up your co2 budget.
+
+Now, let the game begin. Travel to as many countries as possible and be the first in the leaderboard!
+
